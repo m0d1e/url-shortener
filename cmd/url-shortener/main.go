@@ -20,12 +20,12 @@ func main() {
 	// Init config
 	cfg := config.LoadConfig()
 	
-	// Init slErr
+	// Init logger
 	log := setupLogger(cfg.Env)
 	log.Info("start url-shortener", slog.String("env", cfg.Env))
 	log.Debug("debug on")
 	
-	// Init DB
+	// Init database
 	db, err := storage.NewDB(cfg.DatabaseURL)
 	if err != nil {
 		log.Error("cannot innit db", slErr.Err(err))
