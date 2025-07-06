@@ -1,4 +1,4 @@
-env: "local"
+env: "local" # local or prod
 database_url: "${DATABASE_URL}"
 http_server:
   address: "localhost:8080"
